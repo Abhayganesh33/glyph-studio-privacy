@@ -13,6 +13,15 @@ Glyph Studio does **not** collect, store, or share any personal data. All app da
 ### Microphone (RECORD_AUDIO)
 Used exclusively for the **Music Visualizer** feature to detect ambient sound and sync Glyph LEDs. Audio is processed locally on your device and never recorded or transmitted.
 
+### Location (ACCESS_FINE_LOCATION)
+Used exclusively for the **Glyph Compass** feature to determine the device's heading direction and sync Glyph LEDs accordingly. Location data is processed locally on your device and never stored or transmitted.
+
+### Body Sensors (BODY_SENSORS)
+Used to access the device's magnetometer sensor for the **Glyph Compass** feature. Sensor data is processed locally and never stored or transmitted.
+
+### Internet (INTERNET)
+Used only to open external links such as the Privacy Policy and Contact Us page within the app. No user data is transmitted over the internet.
+
 ### Foreground Service
 Used to keep Glyph LED features (torch, battery indicator, timer) active in the background. A persistent notification is shown while the service is running.
 
