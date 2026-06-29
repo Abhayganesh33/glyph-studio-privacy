@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Glyph Studio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #000;
+      --card: #0a0a0a;
+      --border: #1f1f1f;
+      --border-bright: #333;
+      --text: #aaa;
+      --white: #f0f0f0;
+      --muted: #444;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      min-height: 100vh;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .wrap {
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* HEADER */
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 22px 0;
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+
+    .glyph-icon {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      align-items: center;
+    }
+    .gi-bar {
+      width: 5px;
+      border-radius: 3px;
+      background: #fff;
+    }
+    .gi-bar:nth-child(1) { height: 20px; opacity: 1; }
+    .gi-bar:nth-child(2) { height: 12px; opacity: 0.4; }
+    .gi-bar:nth-child(3) { height: 16px; opacity: 0.65; }
+
+    .brand-name {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      color: #fff;
+      text-transform: uppercase;
+    }
+    .brand-sub {
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    .header-tag {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      padding: 4px 10px;
+      text-transform: uppercase;
+    }
+
+    /* HERO */
+    .hero {
+      padding: 64px 0 52px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .corner {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      border-color: #fff;
+      border-style: solid;
+      opacity: 0.15;
+    }
+    .corner.tl { top: 24px; left: 0; border-width: 1px 0 0 1px; }
+    .corner.tr { top: 24px; right: 0; border-width: 1px 1px 0 0; }
+    .corner.bl { bottom: 24px; left: 0; border-width: 0 0 1px 1px; }
+    .corner.br { bottom: 24px; right: 0; border-width: 0 1px 1px 0; }
+
+    .hero-eyebrow {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 18px;
+      height: 1px;
+      background: var(--muted);
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 7vw, 50px);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      color: #fff;
+      margin-bottom: 28px;
+    }
+
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+    .hero-meta-sep { opacity: 0.3; }
+
+    /* MAIN */
+    main { padding: 56px 0 80px; }
+    section { margin-bottom: 48px; }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .section-num {
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 0.1em;
+      min-width: 22px;
+    }
+    h2 {
+      font-size: 9px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #fff;
+      font-weight: 700;
+    }
+    .section-line {
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    p {
+      color: var(--text);
+      font-size: 13px;
+      margin-bottom: 10px;
+      line-height: 1.8;
+    }
+    p strong { color: var(--white); font-weight: 700; }
+
+    /* CALLOUT */
+    .callout {
+      border: 1px solid #2a2a2a;
+      background: #0d0d0d;
+      padding: 18px 22px;
+      margin-bottom: 0;
+    }
+    .callout p {
+      color: var(--white);
+      margin: 0;
+      font-size: 12px;
+    }
+
+    /* PERMISSION LIST */
+    .perm-list {
+      border: 1px solid var(--border);
+    }
+    .perm-item {
+      background: var(--card);
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .perm-item:last-child { border-bottom: none; }
+    .perm-code {
+      font-size: 10px;
+      letter-spacing: 0.12em;
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .perm-label {
+      font-size: 9px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      border: 1px solid var(--border);
+      display: inline-block;
+      padding: 2px 8px;
+      margin-bottom: 10px;
+    }
+    .perm-desc {
+      font-size: 12px;
+      color: #666;
+      line-height: 1.75;
+      margin: 0;
+    }
+    .perm-desc strong { color: #999; }
+
+    /* CONTACT */
+    .contact-box {
+      border: 1px solid var(--border);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      background: var(--card);
+    }
+    .contact-label {
+      font-size: 9px;
+      letter-spacing: 0.15em;
+      color: var(--muted);
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .contact-email {
+      color: #fff;
+      font-size: 13px;
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .contact-email:hover { text-decoration: underline; }
+    .contact-arrow { font-size: 18px; color: var(--muted); }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 0;
+    }
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .footer-copy {
+      font-size: 9px;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .glyph-deco {
+      display: flex;
+      gap: 3px;
+      align-items: flex-end;
+    }
+    .glyph-deco span {
+      width: 3px;
+      border-radius: 2px;
+      background: #fff;
+    }
+    .glyph-deco span:nth-child(1) { height: 8px;  opacity: 0.15; }
+    .glyph-deco span:nth-child(2) { height: 14px; opacity: 0.35; }
+    .glyph-deco span:nth-child(3) { height: 20px; opacity: 0.6;  }
+    .glyph-deco span:nth-child(4) { height: 12px; opacity: 0.25; }
+    .glyph-deco span:nth-child(5) { height: 6px;  opacity: 0.12; }
+
+    @media (max-width: 480px) {
+      .contact-box { flex-direction: column; align-items: flex-start; }
+      .footer-inner { flex-direction: column; gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="wrap header-inner">
+    <div class="brand">
+      <div class="glyph-icon">
+        <div class="gi-bar"></div>
+        <div class="gi-bar"></div>
+        <div class="gi-bar"></div>
+      </div>
+      <div>
+        <div class="brand-name">Glyph Studio</div>
+        <div class="brand-sub">Nothing Phone Exclusive</div>
+      </div>
+    </div>
+    <div class="header-tag">Legal / Privacy</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="corner tl"></div>
+    <div class="corner tr"></div>
+    <div class="corner bl"></div>
+    <div class="corner br"></div>
+    <div class="hero-eyebrow">Privacy Policy</div>
+    <h1>Privacy<br>Policy</h1>
+    <div class="hero-meta">
+      Last updated: June 29, 2026
+      <span class="hero-meta-sep">·</span>
+      Glyph Studio
+      <span class="hero-meta-sep">·</span>
+      Android
+    </div>
+  </div>
+
+  <main>
+
+    <section>
+      <div class="section-head">
+        <span class="section-num">01</span>
+        <h2>Introduction</h2>
+        <div class="section-line"></div>
+      </div>
+      <p>Glyph Studio ("we", "our", or "us") is an Android application designed exclusively for Nothing Phone devices to control the Glyph LED interface.</p>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="section-num">02</span>
+        <h2>Information We Collect</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="callout">
+        <p>Glyph Studio does <strong>not</strong> collect, store, or share any personal data. All app data stays on your device.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="section-num">03</span>
+        <h2>Permissions We Use</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="perm-list">
+
+        <div class="perm-item">
+          <div class="perm-code">RECORD_AUDIO</div>
+          <div class="perm-label">Microphone</div>
+          <p class="perm-desc">Used exclusively for the <strong>Music Visualizer</strong> feature to detect ambient sound and sync Glyph LEDs. Audio is processed locally on your device and never recorded or transmitted.</p>
+        </div>
+
+        <div class="perm-item">
+          <div class="perm-code">ACCESS_FINE_LOCATION</div>
+          <div class="perm-label">Location</div>
+          <p class="perm-desc">Used exclusively for the <strong>Glyph Compass</strong> feature to determine the device's heading direction and sync Glyph LEDs accordingly. Location data is processed locally on your device and never stored or transmitted.</p>
+        </div>
+
+        <div class="perm-item">
+          <div class="perm-code">BODY_SENSORS</div>
+          <div class="perm-label">Body Sensors</div>
+          <p class="perm-desc">Used to access the device's magnetometer sensor for the <strong>Glyph Compass</strong> feature. Sensor data is processed locally and never stored or transmitted.</p>
+        </div>
+
+        <div class="perm-item">
+          <div class="perm-code">INTERNET</div>
+          <div class="perm-label">Network</div>
+          <p class="perm-desc">Used to fetch dynamic application typography via Google Fonts and handle external link navigation for support pages. No personal user data or tracking metrics are transmitted over the network.</p>
+        </div>
+
+        <div class="perm-item">
+          <div class="perm-code">FOREGROUND_SERVICE</div>
+          <div class="perm-label">Background</div>
+          <p class="perm-desc">Used to keep Glyph LED features (torch, battery indicator, timer) active in the background. A persistent notification is shown while the service is running.</p>
+        </div>
+
+        <div class="perm-item">
+          <div class="perm-code">WAKE_LOCK</div>
+          <div class="perm-label">System</div>
+          <p class="perm-desc">Prevents the device from sleeping while Glyph LED animations are active.</p>
+        </div>
+
+        <div class="perm-item">
+          <div class="perm-code">RECEIVE_BOOT_COMPLETED</div>
+          <div class="perm-label">System</div>
+          <p class="perm-desc">Allows the background service to restart automatically after the device reboots.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="section-num">04</span>
+        <h2>Data Storage</h2>
+        <div class="section-line"></div>
+      </div>
+      <p>All user preferences and settings are stored locally on your device using Android SharedPreferences. No data is sent to external servers.</p>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="section-num">05</span>
+        <h2>Third Party Services</h2>
+        <div class="section-line"></div>
+      </div>
+      <p>Glyph Studio does not use any third-party analytics, advertising, or tracking services.</p>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="section-num">06</span>
+        <h2>Nothing Phone SDK</h2>
+        <div class="section-line"></div>
+      </div>
+      <p>Glyph Studio uses the Nothing Glyph SDK to control LED lights on Nothing Phone devices. This SDK does not collect or transmit any user data.</p>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="section-num">07</span>
+        <h2>Children's Privacy</h2>
+        <div class="section-line"></div>
+      </div>
+      <p>Glyph Studio does not knowingly collect data from children under 13.</p>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="section-num">08</span>
+        <h2>Changes to This Policy</h2>
+        <div class="section-line"></div>
+      </div>
+      <p>We may update this privacy policy from time to time. Changes will be posted on this page.</p>
+    </section>
+
+    <section>
+      <div class="section-head">
+        <span class="section-num">09</span>
+        <h2>Contact Us</h2>
+        <div class="section-line"></div>
+      </div>
+      <p>If you have any questions about this privacy policy, contact us at:</p>
+      <div class="contact-box">
+        <div>
+          <div class="contact-label">Email</div>
+          <a class="contact-email" href="mailto:electronprojects29@gmail.com">electronprojects29@gmail.com</a>
+        </div>
+        <div class="contact-arrow">→</div>
+      </div>
+    </section>
+
+  </main>
+
+</div>
+
+<footer>
+  <div class="wrap footer-inner">
+    <div class="footer-copy">© 2026 Glyph Studio — Nothing Phone Exclusive</div>
+    <div class="glyph-deco">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
